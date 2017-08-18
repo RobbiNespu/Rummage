@@ -1,0 +1,1462 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A search and replace tool written in Python.">
+      
+      
+        <link rel="canonical" href="https://facelessuser.github.io/Rummage/usage/">
+      
+      
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+    
+    
+      
+        <title>User Guide - Rummage Documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-bfecc7305d.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-02c2a4388f.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../extra-9b4c72abee.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="https://facelessuser.github.io/Rummage" title="Rummage Documentation" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            User Guide
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/facelessuser/Rummage" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Rummage Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/facelessuser/Rummage" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Rummage" class="md-nav__link">
+      Rummage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        User Guide
+      </label>
+    
+    <a href="./" title="User Guide" class="md-nav__link md-nav__link--active">
+      User Guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-tab" title="Search Tab" class="md-nav__link">
+    Search Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-tab" title="Files Tab" class="md-nav__link">
+    Files Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-tab" title="Content Tab" class="md-nav__link">
+    Content Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search--replace-panel" title="Search &amp; Replace Panel" class="md-nav__link">
+    Search &amp; Replace Panel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-regular-expression-flags" title="Common Regular Expression Flags" class="md-nav__link">
+    Common Regular Expression Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex-engine-flags" title="Regex Engine Flags" class="md-nav__link">
+    Regex Engine Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rummage-flags" title="Rummage Flags" class="md-nav__link">
+    Rummage Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-tester" title="Regular Expression Tester" class="md-nav__link">
+    Regular Expression Tester
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-and-loading-regular-expressions" title="Saving and Loading Regular Expressions" class="md-nav__link">
+    Saving and Loading Regular Expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-chains" title="Search Chains" class="md-nav__link">
+    Search Chains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-plugins" title="Replace plugins" class="md-nav__link">
+    Replace plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-search-panel" title="Limit Search Panel" class="md-nav__link">
+    Limit Search Panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-to-csv-or-html" title="Export to CSV or HTML" class="md-nav__link">
+    Export to CSV or HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences" title="Preferences" class="md-nav__link">
+    Preferences
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" title="General" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" title="Regex" class="md-nav__link">
+    Regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editor" title="Editor" class="md-nav__link">
+    Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" title="Notifications" class="md-nav__link">
+    Notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" title="History" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backrefs-extended-regex-escapes" title="Backrefs (Extended Regex Escapes)" class="md-nav__link">
+    Backrefs (Extended Regex Escapes)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backups" title="Backups" class="md-nav__link">
+    Backups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-manager-context-menu" title="File Manager Context Menu" class="md-nav__link">
+    File Manager Context Menu
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-nautilus" title="Ubuntu Nautilus" class="md-nav__link">
+    Ubuntu Nautilus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization" title="Localization" class="md-nav__link">
+    Localization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-translations" title="Build Translations" class="md-nav__link">
+    Build Translations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-translations" title="Installing Translations" class="md-nav__link">
+    Installing Translations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-translations" title="Adding New Translations" class="md-nav__link">
+    Adding New Translations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing &amp; Support" class="md-nav__link">
+      Contributing &amp; Support
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="Changelog" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-tab" title="Search Tab" class="md-nav__link">
+    Search Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-tab" title="Files Tab" class="md-nav__link">
+    Files Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-tab" title="Content Tab" class="md-nav__link">
+    Content Tab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search--replace-panel" title="Search &amp; Replace Panel" class="md-nav__link">
+    Search &amp; Replace Panel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-regular-expression-flags" title="Common Regular Expression Flags" class="md-nav__link">
+    Common Regular Expression Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex-engine-flags" title="Regex Engine Flags" class="md-nav__link">
+    Regex Engine Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rummage-flags" title="Rummage Flags" class="md-nav__link">
+    Rummage Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-tester" title="Regular Expression Tester" class="md-nav__link">
+    Regular Expression Tester
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-and-loading-regular-expressions" title="Saving and Loading Regular Expressions" class="md-nav__link">
+    Saving and Loading Regular Expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-chains" title="Search Chains" class="md-nav__link">
+    Search Chains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-plugins" title="Replace plugins" class="md-nav__link">
+    Replace plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-search-panel" title="Limit Search Panel" class="md-nav__link">
+    Limit Search Panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-to-csv-or-html" title="Export to CSV or HTML" class="md-nav__link">
+    Export to CSV or HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences" title="Preferences" class="md-nav__link">
+    Preferences
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" title="General" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" title="Regex" class="md-nav__link">
+    Regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editor" title="Editor" class="md-nav__link">
+    Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" title="Notifications" class="md-nav__link">
+    Notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" title="History" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backrefs-extended-regex-escapes" title="Backrefs (Extended Regex Escapes)" class="md-nav__link">
+    Backrefs (Extended Regex Escapes)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backups" title="Backups" class="md-nav__link">
+    Backups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-manager-context-menu" title="File Manager Context Menu" class="md-nav__link">
+    File Manager Context Menu
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-nautilus" title="Ubuntu Nautilus" class="md-nav__link">
+    Ubuntu Nautilus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization" title="Localization" class="md-nav__link">
+    Localization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-translations" title="Build Translations" class="md-nav__link">
+    Build Translations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-translations" title="Installing Translations" class="md-nav__link">
+    Installing Translations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-translations" title="Adding New Translations" class="md-nav__link">
+    Adding New Translations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/facelessuser/Rummage/tree/master/docs/src/markdown/usage.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                
+                
+                <h1 id="user-guide">User Guide<a class="headerlink" href="#user-guide" title="Permanent link"></a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"></a></h2>
+<p>Rummage is designed to be easy to pick up. Rummage's interface consists of three tabs: Search, Files, and Content.  In general, a user specifies where they want to search, what they want to search for, and optionally what they want to replace it with.  Search features can be tweaked with toggles, and the files that get searched can be narrowed with filters.  Search and replace options are all contained in the <strong>Search</strong> tab.  When a search has been completed, general info about the matches found in files will be displayed in the <strong>Files</strong> tab, and more detailed context information will be displayed in the <strong>Content</strong> tab.</p>
+<p>Rummage also comes with a simple regular expression tester to test out patterns. It also provides a feature where patterns can be saved for later and/or frequent use.</p>
+<p>The status bar will show search progress, match counts, and other useful information.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning: Replace</p>
+<p>When replacing, Rummage will back up the file.  If the copy fails, it should terminate the replace for that file.  You can disable backups if you like, but if you aren't careful with your patterns, you may remove unwanted text that you won't be able to recover unless you are using version control.</p>
+<p>This is free software, and I am not responsible for files corrupted or lost.</p>
+<p>See <a href="#backups">Backups</a> to learn more about backups and how to customize backups.</p>
+</div>
+<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link"></a></h2>
+<p>After installation, you should then be able to access Rummage from the command line.  This assumes the Python bin directory is in the path.</p>
+<div class="codehilite"><pre><span></span>rummage
+</pre></div>
+
+<p>Or specify a path:</p>
+<div class="codehilite"><pre><span></span>rummage --path mydirectory
+</pre></div>
+
+<p>You can also run rummage by calling your specific python version like this:</p>
+<div class="codehilite"><pre><span></span>python3 -m rummage --path mydirectory
+</pre></div>
+
+<h2 id="search-tab">Search Tab<a class="headerlink" href="#search-tab" title="Permanent link"></a></h2>
+<p><img alt="Search Tab" src="../images/search_tab.png" /></p>
+<p>The <strong>Search</strong> tab is broken up into 2 panels, the first of which is the <strong>Search &amp; Replace</strong> panel. The <strong>Search &amp; Replace</strong> panel has all the inputs where the search and replace is defined and configured.  It also has access to the regular expression tester and the save/load dialogs for saving/loading patterns for later use.</p>
+<p>The second panel, is the <strong>Limit Search</strong> panel.  The <strong>Limit Search</strong> panel contains toggles and inputs that filter the files to be searched.</p>
+<h2 id="files-tab">Files Tab<a class="headerlink" href="#files-tab" title="Permanent link"></a></h2>
+<p><img alt="Files Tab" src="../images/files_tab.png" /></p>
+<p>The <strong>Files</strong> tab is where files with matches are shown after a search completes.  The files are arranged in a sortable table.  Each entry will show the file's name, size, number of matches in the file, the file path, detected file encoding, date/time when the file was created, and date/time of when the file was last modified.</p>
+<p>When mousing over an entry, the full path to the file will be shown in the status bar.  If you have the editor option in the preference dialog configured properly, you can double click an entry to open to the first match of that file in your favorite editor. Right clicking the entry will bring up a context menu allowing you to reveal the file in your operating system's file manager (Linux will just open parent folder due to limitations on a cross distro solution).</p>
+<h2 id="content-tab">Content Tab<a class="headerlink" href="#content-tab" title="Permanent link"></a></h2>
+<p><img alt="Content Tab" src="../images/content_tab.png" /></p>
+<p>The <strong>Content</strong> tab shows each match in a file individually. The entries will be arranged in a sortable table. Each entry shows the file's name, the line on which the match was found, the number of matches on that line, and the content of the line.  Long lines will be truncated.</p>
+<p>When mousing over an entry, the full path to the file will be shown in the status bar.  If you have the editor option in the preference dialog configured properly, you can double click an entry to open to that specific match of that file in your favorite editor.</p>
+<h2 id="search--replace-panel">Search &amp; Replace Panel<a class="headerlink" href="#search--replace-panel" title="Permanent link"></a></h2>
+<p><img alt="Search and Replace Panel" src="../images/search_replace_panel.png" /></p>
+<p>The <strong>Search &amp; Replace</strong> panel contains three text boxes with a dropdown history. The first text box defines <strong>where to search</strong>, the second defines <strong>what to search for</strong>, and the last defines <strong>what to replace matches with</strong> (this is only needed when doing replaces).  You can select previously used patterns and search targets by expanding the dropdown panel for the input.</p>
+<p>Below the text boxes are toggles that control the regular expression engine's flags and/or features.  These will vary depending on which regular expression engine you are using as Rummage can be used with Python's default <a href="https://docs.python.org/3/library/re.html">Re</a> engine or the third party <a href="https://pypi.python.org/pypi/regex">Regex</a> engine.  Both optionally can use the a special wrapper called Backrefs to add support for a couple special escapes.</p>
+<p>Underneath the regular expression flags, are toggles for general Rummage search features.  These will alter search and/or replace behavior.</p>
+<p>Lastly, Rummage provides buttons to launch a regular expression tester dialog or dialogs to save or load frequently used regular expressions.</p>
+<h3 id="common-regular-expression-flags">Common Regular Expression Flags<a class="headerlink" href="#common-regular-expression-flags" title="Permanent link"></a></h3>
+<p>Both the Re and Regex engine have a couple of shared flags that are exposed in Rummage. These toggles are found directly under the search and replace text boxes.</p>
+<table>
+<thead>
+<tr>
+<th>Toggle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search&nbsp;with&nbsp;regex</td>
+<td>Alters the behavior of <code>Search for</code> and <code>Replace with</code>.  When this is checked, both text boxes require regular expression patterns opposed to literal string.</td>
+</tr>
+<tr>
+<td>Search&nbsp;case-sensitive</td>
+<td>Forces the search to be case-sensitive.</td>
+</tr>
+<tr>
+<td>Dot&nbsp;matches&nbsp;newline</td>
+<td><code>.</code> will also match newlines.</td>
+</tr>
+<tr>
+<td>Use&nbsp;Unicode&nbsp;properties</td>
+<td>Changes the behavior of <code>\w</code>, <code>\W</code>, <code>\b</code>, <code>\B</code>, <code>\d</code>, <code>\D</code>, <code>\s</code>, and <code>\S</code> to use use characters from the Unicode property database (will also modify <code>\l</code>, <code>\L</code>, <code>\c</code>, and <code>\C</code> in search patterns if using Backrefs with Re).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="regex-engine-flags">Regex Engine Flags<a class="headerlink" href="#regex-engine-flags" title="Permanent link"></a></h3>
+<p>If the Regex engine is being used for regular expressions, a couple of extra toggles will be available. Regex can be run in either <code>VERSION0</code> or <code>VERSION1</code> mode.  <code>VERSION0</code> is compatible with Re regular expression patterns and has the extra <code>fullcase</code> toggle.  <code>VERSION1</code> does not have this toggle as it is enabled by default and can only be disabled inline via a pattern with <code>(?-f)</code>. <code>VERSION1</code> is not directly compatible with Re patterns as it adds a number of changes to the syntax allowing for more advanced search options.</p>
+<table>
+<thead>
+<tr>
+<th>Toggle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best&nbsp;fuzzy&nbsp;match</td>
+<td>If performing a fuzzy match, the <em>best</em> fuzzy match will be used.</td>
+</tr>
+<tr>
+<td>Improve&nbsp;fuzzy&nbsp;fit</td>
+<td>Makes fuzzy matching attempt to improve the fit of the next match that it finds.</td>
+</tr>
+<tr>
+<td>Unicode&nbsp;word&nbsp;breaks</td>
+<td>Will use proper Unicode word breaks and line separators when Unicode is enabled. See Regex documentation for more info.</td>
+</tr>
+<tr>
+<td>Use&nbsp;POSIX&nbsp;matching</td>
+<td>Use the POSIX standard for regular expression, which is to return the leftmost longest match.</td>
+</tr>
+<tr>
+<td>Search&nbsp;backwards</td>
+<td>Search backwards. The result of a reverse search is not necessarily the reverse of a forward search.</td>
+</tr>
+<tr>
+<td>Format&nbsp;style&nbsp;replacements</td>
+<td>Replace pattern will use <a href="https://docs.python.org/2/library/string.html#format-string-syntax">Python's string replace format</a> for replace. <code class="codehilite"><span class="s2">&quot;{1[-1]} {1[-2]} {1[-3]}&quot;</span></code> etc.</td>
+</tr>
+<tr>
+<td>Full&nbsp;case-folding</td>
+<td>Use full case folding. For Regex <code>V0</code> only as it is enabled by default for <code>V1</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rummage-flags">Rummage Flags<a class="headerlink" href="#rummage-flags" title="Permanent link"></a></h3>
+<p>Rummage has a couple of flags that are not specific to the regular expression engine.</p>
+<table>
+<thead>
+<tr>
+<th>Toggle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean&nbsp;match</td>
+<td>Will check each file up until the first match and will halt searching further.  No line context info will be gathered or displayed. Does not apply when performing replaces.</td>
+</tr>
+<tr>
+<td>Count&nbsp;only</td>
+<td>Will just count the number of matches in the file and will not display line context information. This has no effect when applying replaces.</td>
+</tr>
+<tr>
+<td>Create&nbsp;backups</td>
+<td>On replace, files with matches will be backed up before applying the replacements; backup files will have the <code>.rum-bak</code> extension.</td>
+</tr>
+<tr>
+<td>Force&nbsp;&lt;encoding&gt;</td>
+<td>Forces all files to be opened with the specified encoding opposed to trying to detect the encoding.  Encoding is hard and slow, so this is the preferred method for fast searches.  On failure, binary will be used instead.</td>
+</tr>
+<tr>
+<td>Use&nbsp;chain&nbsp;search</td>
+<td>Puts Rummage into <a href="#search-chains">"search chain" mode</a>. When in "search chain" mode, rummage will only use saved search chains for search and replace.</td>
+</tr>
+<tr>
+<td>Use&nbsp;replace&nbsp;plugin</td>
+<td>When enabled, Rummage will use a <a href="#replace-plugins">replace plugin</a> instead of a replace pattern in order to do more advanced replaces.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="regular-expression-tester">Regular Expression Tester<a class="headerlink" href="#regular-expression-tester" title="Permanent link"></a></h3>
+<p><img alt="Regex Tester" src="../images/regex_tester.png" /></p>
+<p>Rummage comes with a simple regular expression tester (but you can also test literal patterns if desired). It has a simple multi-line text box to place content to search, and another multi-line box that will show the final results after the find and replace are applied.  Below that you will find two text input boxes for the find pattern and the replace pattern.  Lastly, all search and replace flag toggles are found under the patterns.</p>
+<p>To use the tester, simply enter the content to search, set your desired toggles, and input your find and replace pattern.  As you change your pattern or change your toggles, matches will be updated and highlighted, and the result box will be updated.</p>
+<p>When you are satisfied with your result, click the <code>Use</code> button, and your pattern and settings will be populated in the main window.</p>
+<h3 id="saving-and-loading-regular-expressions">Saving and Loading Regular Expressions<a class="headerlink" href="#saving-and-loading-regular-expressions" title="Permanent link"></a></h3>
+<p>Regular expressions can be very complex, and sometimes you might want to save them for future use to save yourself from having to reconstruct them.</p>
+<p>When you have a pattern configured that you want to save, simply click the <code>Save Search</code> button, and a dialog will pop up asking you to name the search.  When done, click the <code>Save</code> button on the dialog and your search patterns and toggles will be saved.</p>
+<p>You'll notice that there are two input boxes. The first requires a unique name (only word characters, underscores, and hyphens are allowed). The second is an optional comment in case you wish to elaborate on what the pattern is for.</p>
+<p>Underneath the inputs will be the actual search settings being saved.  All of the search settings will be in read only controls.</p>
+<p><img alt="Save Search" src="../images/save_search.png" /></p>
+<p>To load a pattern that was saved previously, click the <code>Load Search</code> button.  You will be presented with a dialog showing all your saved searches.  Highlight the pattern you want to load and click the <code>Load</code> button.  Your pattern and toggles will be populated in the main dialog.</p>
+<p>If you wish to edit the name or comment of a search, you can double click the entry or click the "Edit" button.</p>
+<p><img alt="Load Search" src="../images/load_search.png" /></p>
+<h3 id="search-chains">Search Chains<a class="headerlink" href="#search-chains" title="Permanent link"></a></h3>
+<p>There are times you may have a task that requires you to do multiple find and replaces that are all related, but are too difficult to represent as a single find and replace. This is where search chains can be helpful.</p>
+<p>Search chains are essentially a sequence of multiple <a href="#saving-and-loading-regular-expressions">saved search and replace patterns</a>. You can create a search chain by clicking the <code>Search Chains</code> button which will bring up the search change manager.</p>
+<p><img alt="Chain Button" src="../images/chain_button.png" /></p>
+<p>Here you can create or delete search chains.</p>
+<p><img alt="Search Chains" src="../images/chains.png" /></p>
+<p>To use search chains you must put Rummage in "search chain" mode by selecting the check box named <code>Use search chains</code> in the main window. When "search chain" mode is enabled, all controls that don't apply to search chains will be disabled, and the search box will be replaced with a drop down for selecting created chains. When a search is performed, Rummage will iterate over each file with all the saved searches in the chain.</p>
+<p><img alt="Chain Select" src="../images/chain_mode.png" /></p>
+<h3 id="replace-plugins">Replace plugins<a class="headerlink" href="#replace-plugins" title="Permanent link"></a></h3>
+<p>Regular expressions are great, but some times regular expressions aren't enough.  If you are dealing with a replace task that requires logic that cannot be represented in a simple replace pattern, you can create a "replace plugin".</p>
+<p>Simply create a Python script with a Replace class derived from the <code>ReplacePlugin</code> class found in <code>rumcore</code> at: <code class="codehilite"><span class="kn">from</span> <span class="nn">rummage.lib</span> <span class="kn">import</span> <span class="n">rumcore</span></code>.  The plugin file must include a function called <code>get_replace</code> that returns the needed class.</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">ReplacePlugin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Rummage replace plugin.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_info</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_info</span> <span class="o">=</span> <span class="n">file_info</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">flags</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_init</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Override this function to add initialization setup.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get flags.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flags</span>
+
+    <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get file name.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_info</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">is_binary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Is a binary search.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_info</span><span class="o">.</span><span class="n">encoding</span><span class="o">.</span><span class="n">encode</span> <span class="o">==</span> <span class="s1">&#39;bin&#39;</span>
+
+    <span class="k">def</span> <span class="nf">is_literal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Is a literal search.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">LITERAL</span>
+
+    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make replacement.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<p>The <code>file_info</code> property is a named tuple providing information about the current file such as name, size, creation date, etc.</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">FileInfoRecord</span><span class="p">(</span><span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;FileInfoRecord&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;modified&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">])):</span>
+    <span class="sd">&quot;&quot;&quot;A record for tracking file info.&quot;&quot;&quot;</span>
+</pre></div>
+
+<p>The <code>flags</code> property seen above contains only Rummage search related flags (the flags are abstracted at this level and are converted to the appropriate regular expression flags later).</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Common regular expression flags (re|regex)</span>
+<span class="n">IGNORECASE</span> <span class="o">=</span> <span class="mh">0x1</span>  <span class="c1"># (?i)</span>
+<span class="n">DOTALL</span> <span class="o">=</span> <span class="mh">0x2</span>      <span class="c1"># (?s)</span>
+<span class="n">MULTILINE</span> <span class="o">=</span> <span class="mh">0x4</span>   <span class="c1"># (?m)</span>
+<span class="n">UNICODE</span> <span class="o">=</span> <span class="mh">0x8</span>     <span class="c1"># (?u)</span>
+
+<span class="c1"># Regex module flags</span>
+<span class="n">ASCII</span> <span class="o">=</span> <span class="mh">0x10</span>            <span class="c1"># (?a)</span>
+<span class="n">FULLCASE</span> <span class="o">=</span> <span class="mh">0x20</span>         <span class="c1"># (?f)</span>
+<span class="n">WORD</span> <span class="o">=</span> <span class="mh">0x40</span>             <span class="c1"># (?w)</span>
+<span class="n">BESTMATCH</span> <span class="o">=</span> <span class="mh">0x80</span>        <span class="c1"># (?b)</span>
+<span class="n">ENHANCEMATCH</span> <span class="o">=</span> <span class="mh">0x100</span>    <span class="c1"># (?e)</span>
+<span class="n">REVERSE</span> <span class="o">=</span> <span class="mh">0x200</span>         <span class="c1"># (?r)</span>
+<span class="n">VERSION0</span> <span class="o">=</span> <span class="mh">0x400</span>        <span class="c1"># (?V0)</span>
+<span class="n">VERSION1</span> <span class="o">=</span> <span class="mh">0x800</span>        <span class="c1"># (?V1)</span>
+<span class="n">FORMATREPLACE</span> <span class="o">=</span> <span class="mh">0x1000</span>  <span class="c1"># Use {1} for groups in replace</span>
+<span class="n">POSIX</span> <span class="o">=</span> <span class="mh">0x2000</span>          <span class="c1"># (?p)</span>
+
+<span class="c1"># Rumcore search related flags</span>
+<span class="n">LITERAL</span> <span class="o">=</span> <span class="mh">0x10000</span>           <span class="c1"># Literal search</span>
+</pre></div>
+
+<p>To use replace plugins, simply check the <code>Use plugin replace</code> check box in the main dialog.</p>
+<p><img alt="Enable Replace Plugin" src="../images/plugin_toggle.png" /></p>
+<p>The main dialog's <code>Replace with</code> text box will become the <code>Replace plugin</code> text box with an associated file picker.  Here you can point to your replace plugin file.</p>
+<p><img alt="Enable Replace Plugin" src="../images/plugin_input.png" /></p>
+<details class="settings"><summary>Example Plugin</summary><p>In the example below, we have a replace plugin that replaces the search result with the name of the file.  It is assumed this is not a binary replace.</p><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">rummage.lib</span> <span class="kn">import</span> <span class="n">rumcore</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="k">class</span> <span class="nc">TestReplace</span><span class="p">(</span><span class="n">rumcore</span><span class="o">.</span><span class="n">ReplacePlugin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replace object.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Replace method.&quot;&quot;&quot;</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_file_name</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">name</span>
+
+
+<span class="k">def</span> <span class="nf">get_replace</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get the replace object.&quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">TestReplace</span>
+</pre></div>
+</details><h2 id="limit-search-panel">Limit Search Panel<a class="headerlink" href="#limit-search-panel" title="Permanent link"></a></h2>
+<p><img alt="Limit Search Panel" src="../images/limit_search_panel.png" /></p>
+<p>The limit search pattern contains inputs and toggles to filter which files will be searched.  Some people may like to set up the filters and hide the panel.  If this is desired, you can select in the window's menu <strong>View&rarr;Hide Limit Search Panel</strong>, and the panel will be hidden.</p>
+<table>
+<thead>
+<tr>
+<th>Limiter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size&nbsp;of</td>
+<td>Limits files that are searched by size in Kilobytes.  Files are limited by whether they are greater than, less than, or equal to the specified size.  Setting the dropdown to <code>any</code> disables the filter and allows any file size to be searched. It is recommended to cap search sizes in projects with very large files for the best performances.  The more complex the search pattern, the longer it will take to search a really large file.</td>
+</tr>
+<tr>
+<td>Modified</td>
+<td>Limits the files to be searched by the modified timestamp.  It contains a date picker and time picker that are used to specify the target date and time. Files are limited by whether their timestamp comes before, after, or on specified date time.  Setting the dropdown to <code>on any</code> will disable the filter and allow a file with any timestamp to be searched.</td>
+</tr>
+<tr>
+<td>Created</td>
+<td>Limits the files to be searched by the creation timestamp.  It contains a date picker and time picker that are used to specify the target date and time. Files are limited by whether their timestamp comes before, after, or on specified date time.  Setting the dropdown to <code>on any</code> will disable the filter and allow a file with any timestamp to be searched.</td>
+</tr>
+<tr>
+<td>Files&nbsp;which&nbsp;match</td>
+<td>Specifies a file pattern for files that should be searched.  Multiple file patterns can be specified with <code>;</code> used as a separator. If the Regex toggle to the text box's right is selected, the file pattern must be a regular expression pattern.  You can select previously used patterns by expanding the dropdown panel for the input.</td>
+</tr>
+<tr>
+<td>Exclude&nbsp;folders</td>
+<td>Specifies a directory exclude pattern to filter out folders that are not to be crawled.  Multiple file patterns can be specified with <code>;</code> used as a separator.  If the Regex toggle to the text box's right is selected, the file pattern must be a regular expression pattern.  You can select previously used patterns by expanding the dropdown panel for the input.</td>
+</tr>
+<tr>
+<td>Include&nbsp;subfolders</td>
+<td>Indicates that folders should be recursively searched.</td>
+</tr>
+<tr>
+<td>Include&nbsp;hidden</td>
+<td>The given OS's native hidden files, folders and dotfiles will be included in the search.</td>
+</tr>
+<tr>
+<td>Include&nbsp;binary&nbsp;files</td>
+<td>Forces Rummage to search binary files.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you don't specify a search pattern, Rummage will use your file filter and just show files that match your file filter pattern.</p>
+</div>
+<h2 id="export-to-csv-or-html">Export to CSV or HTML<a class="headerlink" href="#export-to-csv-or-html" title="Permanent link"></a></h2>
+<p><img alt="HTML Export" src="../images/html_export.png" /></p>
+<p>Rummage allows the exporting of the results to either CSV or HTML.  Simply select <strong>File&rarr;Export</strong> and pick either <strong>CSV</strong> or <strong>HTML</strong>.  The HTML output will be styled similar to the GUI interface with the results in tables with sortable columns.</p>
+<p>!!! note "Note":
+    Really, really large sets of results will probably be best suited for CSV as a browser may have a hard time loading the entire data set at once.</p>
+<h2 id="preferences">Preferences<a class="headerlink" href="#preferences" title="Permanent link"></a></h2>
+<p>The preference dialog (found at <strong>File&rarr;Preferences</strong>) is where general application settings are available. The preference dialog organizes settings by tabs.</p>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link"></a></h3>
+<p><img alt="Preferences: General" src="../images/settings_general.png" /></p>
+<p>The <strong>General</strong> tab contains a couple of useful settings.</p>
+<dl>
+<dt>Single Instance</dt>
+<dd>By default, Rummage will allow for multiple windows to be open.  If this option is enabled, the first window will be be the only window to open.  All subsequent instances will pass their arguments to the first and close without showing a window.</dd>
+<dt>Language</dt>
+<dd>Rummage has internal support to display dialog labels in different languages. Currently Rummage has English. Russian is outdated but includes most of the needed translations. In order to use locale, you must copy the project's localization files to your user settings directory. See <a href="#localization">Localization</a> to learn more.</dd>
+</dl>
+<h3 id="regex">Regex<a class="headerlink" href="#regex" title="Permanent link"></a></h3>
+<p><img alt="Preferences: Regex" src="../images/settings_regex.png" /></p>
+<p>The <strong>Regular Expression Modules</strong> tab is where the desired regular expression engine that Rummage uses can be selected and configured.  By default, Rummage will use Re, but if Regex module is installed in your Python installation, it can be selected instead.  There is also the options of using Re or Regex with <a href="#backrefs-extended-regex-escapes">Backrefs</a> (a wrapper that adds a couple of special escapes).</p>
+<p>If using Regex, you can set it to version of your choice. <code>V0</code> tries to be completely compatible with Re patterns while <code>V1</code> breaks compatibility with Re and adds even more useful features. Please see <a href="https://pypi.python.org/pypi/regex/">Regex documentation</a> to learn more.</p>
+<h3 id="editor">Editor<a class="headerlink" href="#editor" title="Permanent link"></a></h3>
+<p><img alt="Preferences: Editor" src="../images/settings_editor.png" /></p>
+<p>The <strong>Editor</strong> tab is where an editor can be configured that will be used to show files for editing.  To setup, click the <code>Change</code> button.  You will be presented with a dialog. Simply provide the appropriate command to open files and click <code>Apply</code>.</p>
+<p><img alt="Editor Options" src="../images/editor_options.png" /></p>
+<p>The editor options dialog has a file picker to select the the editor.  In macOS it may be beneficial to create a shell script or symlink that you can references as the picker won't be able to descend into an <code>.app</code> bundle as it is viewed as a file instead of a folder.</p>
+<p>You can then add arguments.  Each argument must be added as a separate entry.  So something like <code>--file myfile.txt</code> would be counted as <strong>two</strong> arguments while <code>--file=myfile</code> would be counted as one.</p>
+<p>As noted in the image above, Rummage provides 3 special variables that can be used to insert the file name, line number, or column number.</p>
+<table>
+<thead>
+<tr>
+<th>Argument Variables</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{$file}</code></td>
+<td>Insert the file name.</td>
+</tr>
+<tr>
+<td><code>{$line}</code></td>
+<td>Insert the line number.</td>
+</tr>
+<tr>
+<td><code>{$col}</code></td>
+<td>Insert the column number.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link"></a></h3>
+<p><img alt="Preferences: Notifications" src="../images/settings_notify.png" /></p>
+<p>The <strong>Notification</strong> tab controls enabling/disabling and configuration of notifications.  You can enable/disable visual notifications and/or audible notification sounds.</p>
+<p>You can also select whether to use the system's built-in notifications or Growl.</p>
+<dl>
+<dt>Ubuntu</dt>
+<dd>
+<ul>
+<li>Growl: <a href="http://mattn.github.io/growl-for-linux/">Support for Linux</a>.</li>
+<li>Native: OSD via <code>notify-send</code>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though Rummage should run on any Linux distro, the native dialog option was built around Ubuntu's native notifications called OSD.  Notifications will not work on other distros that do not use OSD <em>unless</em> they use Growl.  Even without Growl, other distros will probably still get the audible cue, but as each distro varies, it is difficult to be certain.  As notifications are not crucial to usage, this is minor concern.</p>
+</div>
+</dd>
+<dt>macOS</dt>
+<dd>
+<ul>
+<li>Growl: <a href="http://growl.info/">Support for macOS</a>.</li>
+<li>Native: Notification Center via <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a>. Path to <code>terminal-notifier</code> must be configured.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When selecting <code>native</code> on macOS, an option to select the path to terminal notifier will be available since native dialogs rely on <code>terminal-notifier</code> to send notifications to the Notification Center. This must be configured or <em>native</em> notifications will not work.</p>
+<p>When selecting the <code>terminal-notifier</code> path, you can select either the binary directly or the <code>.&lt;app</code> bundle (depending on how you installed <code>terminal-notifier</code>).  When selecting the <code>.app</code> bundle, Rummage will know how to access the binary inside the bundle.</p>
+</div>
+</dd>
+<dt>Windows</dt>
+<dd>
+<ul>
+<li>Growl: [Support for Windows][growl-win].</li>
+<li>Native: Native windows taskbar notifications.</li>
+</ul>
+</dd>
+</dl>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link"></a></h3>
+<p><img alt="Preferences: History" src="../images/settings_history.png" /></p>
+<p>The <strong>History</strong> panel is where all text box drop down history can be cleared.</p>
+<h2 id="backrefs-extended-regex-escapes">Backrefs (Extended Regex Escapes)<a class="headerlink" href="#backrefs-extended-regex-escapes" title="Permanent link"></a></h2>
+<p>Rummage has the option of using a special wrapper called Backrefs around Python's Re or the 3<sup>rd</sup> party Regex module. Backrefs was written specifically for use with Rummage and adds various additional back references that are known to some regex engines, but not to Python's Re or Regex modules.  The supported back references actually vary depending on the engine being used as one may already have similar support.  You can enable extended back references in the <strong>Preferences</strong> dialog under the <a href="#regular-expression-modules">Regular Expressions Module</a> panel.</p>
+<p>To learn more about the added back references when using Backrefs, read the official <a href="http://facelessuser.github.io/backrefs/">Backrefs documentation</a>.</p>
+<h4 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link"></a></h4>
+<p>Rummage by default does a backup of files on replace when <code>Create backups</code> is enabled in the main dialog. Backups are saved in the same location as the target file with the unique extension <code>rum-bak</code> appended to them.  When <code>Create backups</code> is enabled, files with the extension <code>rum-bak</code> are ignored in search and replace in order to avoid replacing content in your backup.</p>
+<p>If desired, Rummage can be configured to store backups in a sub-folder at the target file's location by setting the <code>Backup to folder</code> option in the setting dialog. The backup folder will be named <code>.rum-bak</code>.  When this is done, all files in <code>.rum-bak</code> will have the <code>bak</code> extension. The entire folder <code>.rum-bak</code> is excluded from search and replace when <code>Create backups</code> is enabled.</p>
+<p>If you would like, you can control the backup extension in the settings dialog and/or the backup folder name.  Remember though, when saving backups to a sub-folder, the custom extension will not be applied and <code>bak</code> will be used as the whole folder is ignored eliminating the need for a unique extension.</p>
+<h2 id="file-manager-context-menu">File Manager Context Menu<a class="headerlink" href="#file-manager-context-menu" title="Permanent link"></a></h2>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link"></a></h3>
+<ul>
+<li>Open Automator.</li>
+<li>Create new Service.</li>
+<li>
+<p>Set the following:</p>
+<ul>
+<li>Service receives selected <code>files or folders</code> in <code>any Application</code>.</li>
+<li>Shell: <code>/bin/sh</code>.</li>
+<li>Pass input: <code>as arguments</code>.</li>
+<li>
+<p>Content of script:</p>
+<div class="codehilite"><pre><span></span>(/Library/Frameworks/Python.framework/Versions/2.7/bin/rummage --path &quot;$1&quot;)&gt;/dev/null 2&gt;&amp;1 &amp;
+</pre></div>
+
+<p>This is just an example. You will need to determine the location of your Python install.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Save to <code>/Users/&lt;username&gt;/Library/Services/Rummage Here...</code>.</p>
+</li>
+</ul>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link"></a></h3>
+<ul>
+<li>
+<p>Create a file <code>rummage.reg</code> and put the following in it (replace &lt;rummage_path&gt; path with the actual path to   <code>rummage.exe</code> that is created in your Python Script folder on installation).  Remember to escape backslashes appropriately.  This isn't a guide in how to do registry editing proper, so only edit the registry if you are certain of what you are doing.</p>
+<div class="codehilite"><pre><span></span><span class="na">Windows Registry Editor Version 5.00</span>
+
+<span class="k">[HKEY_CLASSES_ROOT\Folder\shell\Rummage Here...]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+
+<span class="k">[HKEY_CLASSES_ROOT\Folder\shell\Rummage Here...\command]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;&lt;rummage_path&gt;\&quot; \&quot;--path\&quot; \&quot;%1\&quot;&quot;</span>
+
+<span class="k">[HKEY_CLASSES_ROOT\*\shell\Rummage Here...]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+
+<span class="k">[HKEY_CLASSES_ROOT\*\shell\Rummage Here...\command]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;&lt;rummage_path&gt;\&quot; \&quot;--path\&quot; \&quot;%1\&quot;&quot;</span>
+</pre></div>
+
+</li>
+<li>
+<p>Save file.</p>
+</li>
+<li>Double click the registry file to add the context menu into Windows Explorer.</li>
+</ul>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link"></a></h3>
+<p>There are many different flavors of Linux using different file managers.  This makes it difficult to give a guide to cover all cases.  Please research about your specific distro's file manager and how to add context menus.  If you would like to include the info here, please issue a pull request to update the documentation.</p>
+<h4 id="ubuntu-nautilus">Ubuntu Nautilus<a class="headerlink" href="#ubuntu-nautilus" title="Permanent link"></a></h4>
+<p>Paths might vary depending on Ubuntu version etc.</p>
+<ul>
+<li>
+<p>Create an executable file called <code>Rummage Here...</code> in <code>~/.local/share/nautilus/scripts/</code> with the following content (RUMMAGE_PATH should be the binary created when installing rummage in Python which is usually <code>/usr/local/bin/rummage</code>).</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">RUMMAGE_PATH</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/bin/rummage&quot;</span>
+
+<span class="n">selected_paths</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;NAUTILUS_SCRIPT_SELECTED_FILE_PATHS&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">selected_paths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">paths</span> <span class="o">=</span> <span class="n">selected_paths</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="n">RUMMAGE_PATH</span><span class="p">,</span> <span class="s2">&quot;--path&quot;</span><span class="p">,</span> <span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+
+</li>
+<li>
+<p>Restart of Nautilus may or may not be needed, but context menu item should appear under <code>Scripts</code> and should work on files and folders.</p>
+</li>
+</ul>
+<h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link"></a></h2>
+<p>Rummage provides an i18n localization framework to allow support for displaying the UI in other languages. But there is some manual setup required as out of the box, everything is in English. Currently the project only has an incomplete Russian translation (I don't speak Russian, so I can't complete it).</p>
+<p>So to get localization, you must first build the <code>.mo</code> files on your system, copy them to your Rummage setting folder, select your desired language in the preference dialog, and restart Rummage.</p>
+<h3 id="build-translations">Build Translations<a class="headerlink" href="#build-translations" title="Permanent link"></a></h3>
+<p>Download the release source and unzip it.</p>
+<p>Compile <code>.mo</code> files by running the <code>tools/localize_me.py</code> script from the root of the project:</p>
+<div class="codehilite"><pre><span></span>python3 tools/localize_me.py --i18n /Library/Frameworks/Python.framework/Versions/3.6/share/doc/python3.6/examples/Tools/i18n
+</pre></div>
+
+<p>Modify the <code>--i18n</code> path to the appropriate location of the <code>i18n</code> folder for your Python.</p>
+<h3 id="installing-translations">Installing Translations<a class="headerlink" href="#installing-translations" title="Permanent link"></a></h3>
+<p>To install translations, just copy the <code>locale</code> folder (with your compiled <code>.mo</code> files) from the release you are using to your user configuration folder.  For a traditional Python installation, this is where you'd find it for each OS:</p>
+<p>Windows: <code>C:\Users\&lt;my_username&gt;\.Rummage</code>
+macOS: <code>/Users/&lt;my_username&gt;/.Rummage</code>
+Linux: <code>/home/&lt;my_username&gt;/.config/Rummage</code></p>
+<p>Unless the UI changes by adding new untranslated strings, you can keep using the same translations.</p>
+<p>After installing the localization files, set the language via the <code>Language</code> setting in the settings <a href="#general">General panel</a>.</p>
+<h3 id="adding-new-translations">Adding New Translations<a class="headerlink" href="#adding-new-translations" title="Permanent link"></a></h3>
+<ul>
+<li>Clone the project and create a new folder under <code>locale</code> with the appropriate locale name.</li>
+<li>Create another folder under the one you just created called <code>LC_MESSAGES</code>.</li>
+<li>Copy <code>locale/messages.po</code> to <code>locale/&lt;my_LOCALE&gt;/LC_MESSAGES/rummage.po</code>.</li>
+<li>
+<p>Edit the copied file changing things like:</p>
+<div class="codehilite"><pre><span></span>msgid &quot;About&quot;
+msgstr &quot;&quot;
+</pre></div>
+
+<p>To:</p>
+<div class="codehilite"><pre><span></span>msgid &quot;About&quot;
+msgstr &quot;&lt;my_translation&gt;&quot;
+</pre></div>
+
+</li>
+<li>
+<p>Compile by following steps in <a href="#build-translations">Build Translations</a>.</p>
+</li>
+<li>
+<p>Commit, push, and pull request.</p>
+</li>
+</ul>
+<p>I only speak English, so I do not maintain the translations. If the UI changes, someone from the community will need to update them appropriately via pull requests or they will remain out of date.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../installation/" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../contributing/" title="Contributing &amp; Support" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Contributing &amp; Support
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2013 - 2017 <a href="https://github.com/facelessuser">Isaac Muse</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+        with emoji provided free by
+        <a href="http://www.emojione.com">EmojiOne</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/facelessuser" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:".."}})</script>
+      
+        <script src="../extra-2aceccb07f.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
